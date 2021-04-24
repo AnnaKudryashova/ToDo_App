@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title={todoData.Name}>
+        <lightning-button-group>
+            <lightning-button label="Create SubTodo" data-recordid={todoData.Id} onclick={showCreatePopUp}></lightning-button>
+            <lightning-button label="Edit" data-recordid={todoData.Id} onclick={showEditPopUp}></lightning-button>
+            <lightning-button label="Delete" data-recordid={todoData.Id} onclick={deleteTodo}></lightning-button>
+        </lightning-button-group>
+        <p>Description: {todoData.Description__c}</p>
+        <p>Category: {todoData.Category__c}</p>
+        <p>Priority: {todoData.Priority__c}</p>
+        <p>Status: {todoData.Status__c}</p>
+        <p>Owner: {todoData.Owner.Name}</p>
+        <template if:true={isSubTodoExist}>
+            <c-todo-sub-list todo-subs={todoData.Sub_ToDos__r}></c-todo-sub-list>
+        </template>
+    </lightning-card>
+</template>

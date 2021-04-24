@@ -1,0 +1,14 @@
+.iconList {
+    min-width: 30%;
+    height: 5rem;
+    margin-right: 5px;
+}
+
+
+.iconItem {
+    list-style: none;
+}
+
+.subItems {
+    width: 100%;
+}

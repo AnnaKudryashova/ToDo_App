@@ -1,0 +1,7 @@
+.searchStyle {
+    font-weight: bold;
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}

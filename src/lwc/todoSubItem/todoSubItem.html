@@ -1,0 +1,13 @@
+<template>
+    <template if:true={isSelected}>
+        <div>
+            <lightning-layout-item>
+                <p>Description: {todoSub.Description__c}</p>
+                <p>Is Done: {todoSub.Is_Done__c}</p>
+                <p>Id: {todoSub.Id}</p>
+                <lightning-button-icon onclick={showEditPopUp} icon-name="utility:edit"  variant="border-filled" alternative-text="Edit" title="Edit"></lightning-button-icon>
+                <lightning-button-icon onclick={handleDelete} icon-name="utility:delete"  variant="border-filled" alternative-text="Delete" title="Delete"></lightning-button-icon>
+            </lightning-layout-item>
+        </div>
+    </template>
+</template>

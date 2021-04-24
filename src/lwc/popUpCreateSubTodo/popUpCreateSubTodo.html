@@ -1,0 +1,33 @@
+<template>
+    <template if:true={isPopUpOpen}>
+        <section role="dialog" tabindex="-1" aria-modal="true" class="slds-modal slds-fade-in-open">
+            <div class="slds-modal__container">
+                <header class="slds-modal__header">
+                    <lightning-button-icon icon-name="utility:close" variant="bare-inverse" size="large" class="slds-modal__close" title="Close" onclick={closeCreatePopUp}>
+                    </lightning-button-icon>
+                    <h2 class="slds-modal__title slds-hyphenate">Create Sub-Todo</h2>
+                </header>
+                <div class="slds-modal__content slds-p-around_medium">
+                    <lightning-record-edit-form object-api-name={objectApiName} oncancel={closeCreatePopUp}
+                        onsuccess={handleSuccess}>
+                        <lightning-messages>
+                        </lightning-messages>
+                        <lightning-input-field field-name={toDo} value={recordId}></lightning-input-field>
+                        <lightning-input-field field-name={name}>
+                        </lightning-input-field>
+                        <lightning-input-field field-name={description}>
+                        </lightning-input-field>
+                        <lightning-input-field field-name={isDone}>
+                        </lightning-input-field>
+                            <lightning-button
+                                class="slds-m-top_small"
+                                type="submit"
+                                label="Create new">
+                            </lightning-button>
+                    </lightning-record-edit-form>
+                </div>
+            </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+</template>

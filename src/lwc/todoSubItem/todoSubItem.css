@@ -1,0 +1,12 @@
+.btnGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.description {    
+    width: 80%;
+}
+
+.fieldTitle {
+    font-weight: bold;
+}

@@ -1,0 +1,16 @@
+<template>
+    <lightning-button label="Create" onclick={showCreatePopUp}></lightning-button>
+    <template if:true={todos}>
+        <div class="slds-grid slds-wrap test">
+            <template for:each={todos} for:item="todo">
+                <div key={todo.Id} class="slds-col slds-size--1-of-3">
+                    <c-todo-item todo-data={todo} ondelete={handleDelete} ondeletesub={handleDelete} onshowcreatesub={handleShowCreateSub} onshowedit={handleShowEdit} onshoweditsub={handleShowEditSub}></c-todo-item>
+                </div>
+            </template>
+        </div>
+    </template>
+    <c-pop-up-create-todo is-pop-up-open={isPopUpCreateOpen} onclose={handleClosePopUp} oncreate={handleCreate}></c-pop-up-create-todo>
+    <c-pop-up-edit-todo record-id={recordIdToEdit} is-pop-up-open={isPopUpEditOpen} onclose={handleClosePopUp} onedit={handleEdit}></c-pop-up-edit-todo>
+    <c-pop-up-create-sub-todo record-id={recordIdForSubCreate} is-pop-up-open={isPopUpCreateSubOpen} onclose={handleClosePopUp} oncreate={handleCreate}></c-pop-up-create-sub-todo>
+    <c-pop-up-edit-sub-todo record-id={recordIdToSubEdit} is-pop-up-open={isPopUpEditSubOpen} onclose={handleClosePopUp} onedit={handleEdit}></c-pop-up-edit-sub-todo>
+</template>

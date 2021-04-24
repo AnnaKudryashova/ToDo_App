@@ -1,0 +1,17 @@
+<template>
+    <div class="slds-box">
+        <lightning-layout>
+            <lightning-layout-item>
+                <lightning-vertical-navigation selected-item={selectedItem} onselect={handleSelect}>
+                    <template for:each={todoSubs} for:item="todoSub">
+                        <lightning-vertical-navigation-item key={todoSub.Id} label={todoSub.Name} name={todoSub.Name}>
+                        </lightning-vertical-navigation-item>
+                    </template>
+                </lightning-vertical-navigation>
+            </lightning-layout-item>
+            <template for:each={todoSubs} for:item="todoSub">
+                <c-todo-sub-item key={todoSub.Id} todo-sub={todoSub} selected-item={selectedItem}></c-todo-sub-item>
+            </template>
+        </lightning-layout>
+    </div>
+</template>
